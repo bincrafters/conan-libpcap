@@ -23,7 +23,7 @@ class LibPcapConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     description = "libpcap is an API for capturing network traffic"
     license = "https://github.com/the-tcpdump-group/libpcap/blob/master/LICENSE"
-    default_options = "shared=False", "enable_dbus=False", "enable_bluetooth=False", "enable_usb=False", "enable_packet_ring=False", "disable_universal=False"
+    default_options = {'shared': False, 'enable_dbus': False, 'enable_bluetooth': False, 'enable_usb': False, 'enable_packet_ring': False, 'disable_universal': False}
     exports = ["LICENSE.md"]
     libpcap_dir = "%s-%s-%s" % (name, name, version)
 
@@ -60,8 +60,9 @@ class LibPcapConan(ConanFile):
 
     def configure(self):
         del self.settings.compiler.libcxx
+        del self.settings.compiler.cppstd
         if self.settings.os == "Windows":
-            raise Exception("For Windows use winpcap/4.1.2@bincrafters/stable")
+            raise ConanInvalidConfiguration("For Windows use winpcap/4.1.2@bincrafters/stable")
 
     def build(self):
         with tools.chdir(self.libpcap_dir):
