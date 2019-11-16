@@ -20,7 +20,6 @@ class LibPcapConan(ConanFile):
     }
     url = "http://github.com/bincrafters/conan-libpcap"
     homepage = "https://github.com/the-tcpdump-group/libpcap"
-    author = "Bincrafters <bincrafters@gmail.com>"
     description = "libpcap is an API for capturing network traffic"
     license = "https://github.com/the-tcpdump-group/libpcap/blob/master/LICENSE"
     default_options = {'shared': False, 'enable_dbus': False, 'enable_bluetooth': False, 'enable_usb': False, 'enable_packet_ring': False, 'disable_universal': False}
