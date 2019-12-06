@@ -7,7 +7,7 @@ class LibPcapConan(ConanFile):
     """Donwload pcap library, build and create package
     """
     name = "libpcap"
-    version = "1.8.1"
+    version = "1.9.1"
     url = "http://github.com/bincrafters/conan-libpcap"
     homepage = "https://github.com/the-tcpdump-group/libpcap"
     description = "libpcap is an API for capturing network traffic"
@@ -64,7 +64,7 @@ class LibPcapConan(ConanFile):
                 package_tool.install(packages=" ".join(package_list))
 
     def source(self):
-        sha256 = "35c45ce725933894878707a00f60bb271244902363ec7097f8fa016dae278c5d"
+        sha256 = "8ac670de8dd6eff39441580c67f0520f326773422bbf89fdffcd269bd0cfddde"
         tools.get("{}/archive/libpcap-{}.tar.gz".format(self.homepage, self.version), sha256=sha256)
         extracted_folder = self.name + "-" + self.name + "-" + self.version
         os.rename(extracted_folder, self._source_subfolder)
