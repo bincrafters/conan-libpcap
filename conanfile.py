@@ -40,7 +40,7 @@ class LibPcapConan(ConanFile):
 
     def requirements(self):
         if self.options.enable_usb:
-            self.requires("libusb/1.0.21@bincrafters/stable")
+            self.requires("libusb/1.0.23")
 
     def build_requirements(self):
         if self.settings.os == "Linux":
