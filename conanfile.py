@@ -13,7 +13,6 @@ class LibPcapConan(ConanFile):
     description = "libpcap is an API for capturing network traffic"
     license = "BSD-3-Clause"
     topics = ("networking", "pcap", "sniffing", "network-traffic")
-    exports = ["LICENSE.md"]
     settings = "os", "arch", "compiler", "build_type"
     options = {
         "shared": [True, False],
